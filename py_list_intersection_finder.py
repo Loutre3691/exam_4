@@ -24,7 +24,34 @@
 # list_intersection_finder([[5]]) -> [5]
 
 
-def list_intersection_finder(lists: list[list[int]]) -> list[int]
-{
-    
-}
+def list_intersection_finder(lists: list[list[int]]) -> list[int]:
+    if not lists:
+        return ([])
+
+    result = []
+    for elem in lists[0]:
+        if all(elem in lst for lst in lists[1:]):
+            if not elem in result:
+                result.append(elem)
+
+    return (result)
+
+
+
+if __name__ == "__main__":
+    result1 = list_intersection_finder([[1, 1, 2, 3], [2, 3, 4], [2, 3, 5]])
+    result2 = list_intersection_finder([[1, 2, 3, 4], [2, 4, 6, 8], [4, 8, 12]])
+    result3 = list_intersection_finder([[1, 1, 2, 3], [1, 2, 2, 3], [1, 2, 3, 3]])
+    result4 = list_intersection_finder([[1, 2, 3], [4, 5, 6]])
+    result5 = list_intersection_finder([])
+    result6 = list_intersection_finder([[1, 2, 3], []]) 
+    result7 = list_intersection_finder([[5]])
+
+    print(result1)
+    print(result2)
+    print(result3)
+    print(result4)
+    print(result5)
+    print(result6)
+    print(result7)
+

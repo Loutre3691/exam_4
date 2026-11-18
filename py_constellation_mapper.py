@@ -26,8 +26,15 @@ from __future__ import annotations
 
 def constellation_mapper(stars: list[tuple[int, int]], dim: int) -> list[str]:
     result = []
-    for i in range(dim):
-        
+    for line in range(dim):
+        t = ""
+        for col in range(dim):
+            if (line, col) in stars:
+                t += "*"
+            else:
+                t += "."
+
+        result.append(t)
 
     return (result)
     

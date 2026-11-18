@@ -13,5 +13,4 @@
 # palindrome_partitioner("aba") -> 0 (la partition est "aba")
 
 
-def palindrome_partitioner(s: str) -> int
-{}
+def palindrome_partitioner(s: str) -> int:

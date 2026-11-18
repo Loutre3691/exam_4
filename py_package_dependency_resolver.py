@@ -22,7 +22,4 @@
 # package_dependency_resolver({"web": [], "api": [], "frontend": ["web"], "backend": ["api"]})
 # -> ["web", "frontend", "api", "backend"]
 
-def package_dependency_resolver(packages: dict[str, list[str]]) -> list[str]
-{
-
-}
+def package_dependency_resolver(packages: dict[str, list[str]]) -> list[str]:
