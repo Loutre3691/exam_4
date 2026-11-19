@@ -30,19 +30,23 @@
 
 
 def sliding_window_maximum(nums: list[int], k: int) -> list[int]:
+    new = []
+    if not nums or k == 0:
+        return []
 
-
-
+    for i in range(len(nums) - k + 1):
+        new.append(max(nums[i:i+k]))
+    return new
 
 
 if __name__ == "__main__":
     result1 = sliding_window_maximum([1, 3, -1, -3, 5, 3, 6, 7], 3)
-    result2 = merge_sorted_lists([[1, 5, 9], [2, 3, 8], [4, 6, 7]])
-    result3 = merge_sorted_lists([[5], [1, 3], [2, 4]])
-    result4 = merge_sorted_lists([[1, 1, 2], [2, 3, 3]])
-    result5 = merge_sorted_lists([[]])
-    result6 = merge_sorted_lists([[-5, -1, 0], [-3, 2, 4]])
-    result7 = merge_sorted_lists([[10], [10], [10]])
+    result2 = sliding_window_maximum([1, 2, 3, 4, 5], 2)
+    result3 = sliding_window_maximum([5, 4, 3, 2, 1], 1)
+    result4 = sliding_window_maximum([1, 2, 3], 3)
+    result5 = sliding_window_maximum([1, 2, 3], 4)
+    result6 = sliding_window_maximum([], 2)
+    result7 = sliding_window_maximum([1, 2, 3], 0)
 
     print(result1)
     print(result2)
